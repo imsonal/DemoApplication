@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Employee>
+
+@{
+    ViewBag.Title = "Privacy";
+}
+<div><b>Table Format Data Displaying in ForEach</b><br /></div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Address</th>
+        <th>City</th>
+     <input type="button" value="Edit" onclick="@("window.location.href='" + @Url.Action("Edit", "Home") + "'");" />
+        <input type="button" value="Delete" onclick="@("window.location.href='" + @Url.Action("actionName", "controllerName") + "'");" />
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.Id</td>
+            <td>@d.Name</td>
+            <td>@d.Salary</td>
+            <td>@d.Address</td>
+            <td>@d.City</td>
+            
+        </tr>
+
+    }
+</table>
